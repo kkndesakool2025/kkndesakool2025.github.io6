@@ -1,0 +1,2482 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKN Desa Ko'ol 2025 - Menanam Ilmu, Menuai Dampak</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="KKN NEW CODE.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-purple: #4a148c;
+            --royal-blue: #1565c0;
+            --light-purple: #7b1fa2;
+            --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gold: #ffd700;
+            --light-gold: #fff8dc;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --shadow-purple: rgba(116, 31, 162, 0.3);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(74, 20, 140, 0.95);
+            box-shadow: 0 8px 32px var(--shadow-purple);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--gold);
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--gold);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #4a148c 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.3) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.2) 0%, transparent 50%),
+                              radial-gradient(circle at 40% 70%, rgba(255, 215, 0, 0.25) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(45deg, #ffd700, #fff8dc, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .slogan {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--light-gold);
+            font-style: italic;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--gold), #ffed4e);
+            color: var(--primary-purple);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-outline {
+            background: var(--glass-bg);
+            color: white;
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, var(--primary-purple), var(--royal-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* profile section */
+        village-profile-section {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #6a5acd 0%, #4169e1 50%, #1e3a8a 100%);
+            padding: 60px 0;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0;
+            overflow: hidden;
+            z-index: 1;
+            display: flex;
+            flex-direction: column; 
+        }
+
+        .village-profile-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(65, 105, 225, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .village-profile-section * {
+            box-sizing: border-box;
+        }
+
+        .village-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .village-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .village-header .village-subtitle {
+            color: #111 !important;
+            transition: color 0.5s cubic-bezier(.4,2,.6,1);
+        }
+        .village-container,
+        .village-header,
+        .village-content,
+        .village-card {
+            transition: all 0.6s cubic-bezier(.4,2,.6,1);
+        }
+
+        .village-logo {
+            width: 170px;
+            height: 170px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e, #ffc107);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 15px 35px rgba(0,0,0,0.3),
+                0 0 0 8px rgba(255, 215, 0, 0.2),
+                0 0 0 16px rgba(255, 215, 0, 0.1);
+            font-size: 3rem;
+            color: #4a148c;
+            margin-bottom: 30px;
+            animation: village-logo-glow 3s ease-in-out infinite alternate;
+        }
+        @keyframes village-logo-glow {
+            0% { box-shadow: 0 15px 35px rgba(0,0,0,0.3), 0 0 0 8px rgba(255, 215, 0, 0.2), 0 0 0 16px rgba(255, 215, 0, 0.1); }
+            100% { box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 12px rgba(255, 215, 0, 0.3), 0 0 0 24px rgba(255, 215, 0, 0.15); }
+        }
+
+        .village-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            position: relative;
+            color: #4a148c !important; /
+            background: none !important;
+            -webkit-background-clip: initial !important;
+            -webkit-text-fill-color: initial !important;
+            background-clip: initial !important;
+        }
+    
+
+        .village-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ffd700, transparent);
+            border-radius: 2px;
+        }
+
+        .village-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.95);
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .village-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .village-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,249,255,0.9));
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 
+                0 20px 40px rgba(0,0,0,0.15),
+                0 0 0 1px rgba(255, 215, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .village-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8a2be2, #4169e1, #ffd700, #4169e1, #8a2be2);
+            background-size: 200% 100%;
+            animation: village-shimmer 3s linear infinite;
+        }
+
+        @keyframes village-shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .village-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.2),
+                0 0 0 1px rgba(255, 215, 0, 0.4),
+                0 0 30px rgba(138, 43, 226, 0.2);
+        }
+
+        .village-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #8a2be2, #4169e1, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .village-card h3 .icon {
+            background: linear-gradient(135deg, #ffd700, #8a2be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.3));
+        }
+
+        .village-card p {
+            margin-bottom: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .village-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .village-timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #ffd700, #8a2be2, #4169e1, #ffd700);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 
+                0 3px 8px rgba(0,0,0,0.2),
+                0 0 0 2px rgba(255, 215, 0, 0.3),
+                inset 0 1px 2px rgba(255,255,255,0.5);
+            animation: village-timeline-pulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes village-timeline-pulse {
+            0% { transform: scale(1); box-shadow: 0 3px 8px rgba(0,0,0,0.2), 0 0 0 2px rgba(255, 215, 0, 0.3), inset 0 1px 2px rgba(255,255,255,0.5); }
+            100% { transform: scale(1.1); box-shadow: 0 4px 12px rgba(0,0,0,0.3), 0 0 0 4px rgba(255, 215, 0, 0.5), inset 0 1px 2px rgba(255,255,255,0.7); }
+        }
+
+        .timeline-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .org-structure {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .org-member {
+            background: linear-gradient(135deg, #8a2be2, #4169e1);
+            padding: 25px;
+            border-radius: 18px;
+            text-align: center;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
+        }
+
+        .org-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            z-index: 0;
+            border-radius: 15px;
+        }
+
+        .org-member:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 
+                0 20px 40px rgba(138, 43, 226, 0.4),
+                0 0 30px rgba(65, 105, 225, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .org-member .position {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .org-member .name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .village-about-landscape {
+            grid-column: 1 / -1;
+        }
+
+        .about-landscape-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .about-text {
+            padding-right: 20px;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,249,255,0.8));
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #8a2be2, #4169e1, #ffd700);
+            z-index: -1;
+            margin: -2px;
+            border-radius: 20px;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 
+                0 15px 30px rgba(138, 43, 226, 0.2),
+                0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .highlight-item .icon {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #ffd700, #8a2be2, #4169e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 3px 6px rgba(255, 215, 0, 0.3));
+        }
+
+        .highlight-item h4 {
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, #4a148c, #1e3a8a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .village-map {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,249,255,0.9));
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 
+                0 20px 40px rgba(0,0,0,0.15),
+                0 0 0 1px rgba(255, 215, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .village-map::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8a2be2, #4169e1, #ffd700, #4169e1, #8a2be2);
+            background-size: 200% 100%;
+            animation: village-shimmer 3s linear infinite;
+        }
+
+        .map-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .map-header h4 {
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, #8a2be2, #4169e1, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .map-header h4 .icon {
+            background: linear-gradient(135deg, #ffd700, #8a2be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.3));
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(65, 105, 225, 0.1));
+            border-radius: 15px;
+            border: 2px dashed rgba(138, 43, 226, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .placeholder-content {
+            text-align: center;
+            color: #666;
+        }
+
+        .placeholder-content .icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #8a2be2, #4169e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .placeholder-content h3 {
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, #8a2be2, #4169e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .placeholder-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 400px;
+            margin: 20px auto 0;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+        }
+
+        .feature-item .icon {
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, #8a2be2, #4169e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-item span {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .map-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .map-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #8a2be2, #4169e1, #6a5acd);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .map-btn:hover::before {
+            left: 100%;
+        }
+
+        .map-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 
+                0 10px 25px rgba(138, 43, 226, 0.4),
+                0 0 20px rgba(255, 215, 0, 0.3);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        /* Icons using CSS */
+        village-profile-section .icon {
+            display: inline-block;
+            font-size: inherit;
+            line-height: 1;
+            vertical-align: middle;
+        }
+
+        .village-profile-section .icon-book::before {
+            content: "📖";
+        }
+
+        .village-profile-section .icon-users::before {
+            content: "👥";
+        }
+
+        .village-profile-section .icon-home::before {
+            content: "🏠";
+        }
+
+        .village-profile-section .icon-fish::before {
+            content: "🐟";
+        }
+
+        .village-profile-section .icon-culture::before {
+            content: "🎭";
+        }
+
+        .village-profile-section .icon-store::before {
+            content: "🏪";
+        }
+
+        .village-profile-section .icon-map::before {
+            content: "📍";
+        }
+
+        .village-profile-section .icon-map-alt::before {
+            content: "🗺️";
+        }
+
+        .village-profile-section .icon-school::before {
+            content: "🏫";
+        }
+
+        .village-profile-section .icon-hospital::before {
+            content: "🏥";
+        }
+
+        .village-profile-section .icon-mosque::before {
+            content: "🕌";
+        }
+
+        .village-profile-section .icon-water::before {
+            content: "🌊";
+        }
+
+        .village-profile-section .icon-google::before {
+            content: "🌐";
+        }
+
+        .village-profile-section .icon-route::before {
+            content: "🛣️";
+        }
+
+        @media (max-width: 768px) {
+            .village-profile-section {
+                padding: 40px 0;
+            }
+
+            .village-container {
+                padding: 0 15px;
+            }
+
+            .village-header {
+                margin-bottom: 40px;
+            }
+
+            .village-logo {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+
+            .village-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .village-title {
+                font-size: 2.2rem;
+            }
+
+            .village-card {
+                padding: 25px;
+            }
+
+            .village-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            .org-structure {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .org-member {
+                padding: 20px;
+            }
+            
+            .map-controls {
+                grid-template-columns: 1fr;
+            }
+
+            .about-landscape-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .about-text {
+                padding-right: 0;
+            }
+
+            .placeholder-features {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .map-placeholder {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .village-profile-section {
+                padding: 30px 0;
+            }
+
+            .village-title {
+                font-size: 1.8rem;
+            }
+
+            .village-subtitle {
+                font-size: 1rem;
+            }
+
+            .village-card {
+                padding: 20px;
+            }
+
+            .org-member {
+                padding: 15px;
+            }
+
+            .org-member .position {
+                font-size: 0.85rem;
+            }
+
+            .org-member .name {
+                font-size: 1rem;
+            }
+
+            .map-btn {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Logo Philosophy Section */
+        .logo-philosophy {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            position: relative;
+            padding: 3rem 0;
+        }
+        
+
+        .logo-philosophy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 10% 20%, rgba(74, 20, 140, 0.1) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 80%, rgba(21, 101, 192, 0.1) 0%, transparent 50%),
+                              radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .logo-philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .logo-philosophy-item {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            padding: 2rem;
+            box-shadow: 0 15px 35px rgba(74, 20, 140, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .logo-philosophy-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(102, 126, 234, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-philosophy-item:hover::before {
+            opacity: 1;
+        }
+
+        .logo-philosophy-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(74, 20, 140, 0.2);
+        }
+
+        .logo-philosophy-item i {
+            font-size: 3rem;
+            color: var(--primary-purple);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-philosophy-item:hover i {
+            transform: rotate(360deg);
+        }
+
+        .logo-philosophy-item h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary-purple), var(--royal-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-philosophy-item p {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .logo-philosophy-item a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(45deg, var(--gold), #ffed4e);
+            color: var(--primary-purple);
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .logo-philosophy-item a:hover {
+            background: linear-gradient(45deg, #ffed4e, var(--gold));
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .logo-philosophy-item a i {
+            margin-left: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .logo-philosophy-item a i:hover {
+            transform: translateX(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-philosophy-item a:hover i {
+            color: var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-philosophy-item a:hover i {
+            transform: translateX(5px);
+        }
+
+        .logo-philosophy-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+
+        /* Programs Section */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(74, 20, 140, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .program-card:hover::before {
+            opacity: 1;
+        }
+
+        .program-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(74, 20, 140, 0.2);
+        }
+
+        .program-image {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 25px 25px 0 0;
+        }
+
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .program-card:hover .program-image img {
+            transform: scale(1.1);
+        }
+
+        .program-header {
+            background: linear-gradient(135deg, var(--primary-purple), var(--royal-blue));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .program-header i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-content {
+            padding: 2rem;
+        }
+
+        .program-content h4 {
+            background: linear-gradient(45deg, var(--primary-purple), var(--royal-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .program-content ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .program-content li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .program-content li:before {
+            content: "✓";
+            color: var(--gold);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* UMKM Section */
+        .umkm {
+            background: linear-gradient(135deg, #f8f9ff 0%, var(--light-gold) 100%);
+            position: relative;
+        }
+
+        .umkm::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 10%, rgba(74, 20, 140, 0.05) 0%, transparent 50%),
+                              radial-gradient(circle at 60% 20%, rgba(21, 101, 192, 0.05) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .umkm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .umkm-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(74, 20, 140, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .umkm-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(102, 126, 234, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .umkm-card:hover::before {
+            opacity: 1;
+        }
+
+        .umkm-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(74, 20, 140, 0.2);
+        }
+
+        .umkm-image {
+            height: 220px;
+            background: linear-gradient(135deg, var(--primary-purple), var(--royal-blue), var(--gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .umkm-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .umkm-card:hover .umkm-image::before {
+            transform: translateX(100%);
+        }
+
+        .umkm-content {
+            padding: 2rem;
+        }
+
+        .umkm-content h4 {
+            background: linear-gradient(45deg, var(--primary-purple), var(--royal-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .price {
+            background: linear-gradient(45deg, var(--gold), #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        /* Documentation Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--primary-purple), var(--royal-blue));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(74, 20, 140, 0.3);
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .gallery-item:hover::before {
+            transform: translateX(100%);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(74, 20, 140, 0.4);
+        }
+
+        .testimonials {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(74, 20, 140, 0.15);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(102, 126, 234, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .testimonial:hover::before {
+            opacity: 1;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(74, 20, 140, 0.25);
+        }
+
+        .testimonial .img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), #ffed4e);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-purple);
+            font-size: 1.8rem;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial h4 {
+            background: linear-gradient(45deg, var(--primary-purple), var(--royal-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial p {
+            color: var(--text-dark);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Closing Section */
+        .closing {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--royal-blue) 50%, #1a237e 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .closing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 15% 20%, rgba(255, 215, 0, 0.2) 0%, transparent 50%),
+                              radial-gradient(circle at 70% 10%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                              radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            animation: float 25s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .closing h2 {
+            background: linear-gradient(45deg, var(--gold), #fff8dc, var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .closing p {
+            position: relative;
+            z-index: 2;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            background: linear-gradient(45deg, var(--gold), #fff8dc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 3rem 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .video-container {
+            margin: 3rem 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+
+        .video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-placeholder {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(74, 20, 140, 0.3));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--gold);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .video-placeholder:hover::before {
+            transform: translateX(100%);
+        }
+
+        .video-placeholder:hover {
+            transform: scale(1.02);
+            color: #fff8dc;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, var(--primary-purple) 50%, #0d1421 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 10% 50%, rgba(255, 215, 0, 0.3) 0%, transparent 30%),
+                              radial-gradient(circle at 50% 10%, rgba(255, 215, 0, 0.2) 0%, transparent 30%),
+                              radial-gradient(circle at 90% 90%, rgba(255, 215, 0, 0.25) 0%, transparent 30%);
+            animation: float 30s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .footer p {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer p:first-child {
+            background: linear-gradient(45deg, var(--gold), #fff8dc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 500;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, var(--gold), #ffed4e);
+            color: var(--primary-purple);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 1000;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background: linear-gradient(135deg, #fff8dc, var(--gold));
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+        }
+
+        .back-to-top i {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-to-top:hover i {
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(74, 20, 140, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .slogan {
+                font-size: 1.2rem;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .programs-grid,
+            .umkm-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+                <div class="programs-image">
+                <img src="logo kkn terbaru.png" width="27px alt ="Program Kerja KKN Desa Ko'ol">
+            <a href="#" class="logo playfair">KKN Ko'ol 2025</a>
+             <ul class="nav-menu">
+            <li><a href="#home" class="nav-link">Beranda</a></li>
+            <li><a href="#profile" class="nav-link">Profil Desa</a></li>
+            <li><a href="#logo-philosophy" class="nav-link">Filosofi Logo</a></li>
+            <li><a href="#programs" class="nav-link">Program Kerja</a></li>
+            <li><a href="#umkm" class="nav-link">UMKM</a></li>
+            <li><a href="#documentation" class="nav-link">Dokumentasi</a></li>
+            <li><a href="#closing" class="nav-link">Penutup</a></li>
+        </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="playfair">KKN DESA KO'OL 2025</h1>
+            <p class="slogan">Menanam Ilmu, Menuai Dampak</p>
+            <div class="cta-buttons">
+    <a href="#profile" class="btn btn-primary">Profil Desa</a>
+    <a href="#logo-philosophy" class="btn btn-outline">Filosofi logo</a>
+    <a href="#programs" class="btn btn-outline">Program Kerja</a>
+    <a href="#umkm" class="btn btn-outline">UMKM</a>
+    <a href="#documentation" class="btn btn-outline">Dokumentasi</a>
+</div>
+        </div>
+    </section>
+    <!--  Profile Section -->
+     <section id="profile" class="village-profile-section">
+    <div class="village-container">
+        <!-- Header -->
+        <div class="village-header">
+            <div class="village-logo">
+                        <img src="LOGO DESA KOOL.png" width="130px" alt="Logo Desa Ko'ol" class="logo-image">
+                <span class="icon icon-mountain"></span>
+            </div>
+            <h1 class="village-title">Profil Desa Ko'ol</h1>
+            <p class="village-subtitle">Mengenal lebih dekat Desa Ko'ol dengan segala filosofi, sejarah, dan potensi yang dimilikinya</p>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="village-content">
+            <!-- Philosophy & History -->
+            <div class="village-card">
+                <h3><span class="icon icon-book"></span> Filosofi & Sejarah</h3>
+                <div class="village-timeline">
+                    <div class="timeline-item">
+                        <h4>Asal Usul Nama "Ko'ol"</h4>
+                        <p>Nama "Ko'ol" berasal dari kondisi geografis daerah ini yang dulunya merupakan sebuah telaga besar. Telaga tersebut dihuni oleh banyak bekicot (keong) yang dalam bahasa lokal disebut "ko'ol".</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Transformasi Wilayah</h4>
+                        <p>Seiring berjalannya waktu, telaga tersebut mengering dan berubah menjadi daratan yang subur. Masyarakat kemudian menetap dan membangun pemukiman di area tersebut.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Filosofi Hidup</h4>
+                        <p>Seperti bekicot yang tahan banting dan dapat beradaptasi, masyarakat Desa Ko'ol memiliki semangat pantang menyerah dan selalu bersatu dalam menghadapi tantangan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Organization Structure -->
+            <div class="village-card">
+                <h3><span class="icon icon-users"></span> Struktur Organisasi Desa</h3>
+                <div class="org-structure">
+                    <div class="org-member">
+                        <div class="position">Kepala Desa</div>
+                        <div class="name">Rofiq</div>
+                    </div>
+                    <div class="org-member">
+                        <div class="position">Ketua</div>
+                        <div class="name">Ahmad Gufron</div>
+                    </div>
+                    <div class="org-member">
+                        <div class="position">Sekretaris</div>
+                        <div class="name">Mufarrorah</div>
+                    </div>
+                    <div class="org-member">
+                        <div class="position">Bendahara</div>
+                        <div class="name">Abd. Malik</div>
+                    </div>
+                    <div class="org-member">
+                        <div class="position">Seksi Pengolahan</div>
+                        <div class="name">Zainul Abidin & Jumriyah</div>
+                    </div>
+                    <div class="org-member">
+                        <div class="position">Seksi Pemberdayaan</div>
+                        <div class="name">Abdul Jabar & M. Syaiful</div>
+                    </div>
+                    <div class="org-member">
+                        <div class="position">Bagian Perpustakaan</div>
+                        <div class="name">Masrukotul Aini</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Village -->
+            <div class="village-card village-about-landscape">
+                <h3><span class="icon icon-home"></span> Tentang Desa Ko'ol</h3>
+                <div class="about-landscape-content">
+                    <div class="about-text">
+                        <p>Desa Ko'ol merupakan desa pesisir yang kaya akan potensi alam dan budaya. Terletak di Kecamatan Klampis, Kabupaten Bangkalan, Jawa Timur, desa ini memiliki keindahan pantai yang memukau serta masyarakat yang ramah dan gotong royong.</p>
+                        <p>Dengan mayoritas penduduk bermata pencaharian sebagai nelayan dan petani, Desa Ko'ol memiliki potensi besar dalam pengembangan UMKM berbasis hasil laut dan pertanian.</p>
+                    </div>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <span class="icon icon-fish"></span>
+                            <h4>Hasil Laut</h4>
+                            <p>Ikan segar dan kerang berkualitas tinggi</p>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="icon icon-culture"></span>
+                            <h4>Budaya</h4>
+                            <p>Tradisi kenduri dan gotong royong</p>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="icon icon-store"></span>
+                            <h4>Ekonomi</h4>
+                            <p>UMKM dan hasil perikanan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location Map -->
+            <div class="village-map">
+                <div class="map-header">
+                    <h4><span class="icon icon-map"></span> Lokasi Desa Ko'ol</h4>
+                    <p>Kecamatan Klampis, Kabupaten Bangkalan, Jawa Timur</p>
+                </div>
+                
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15843.179992780179!2d112.82782284789026!3d-6.9150965871793835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd81243c55c8971%3A0x5ec31a99b9eb2cc9!2sKo&#39;ol%2C%20Klampis%2C%20Bangkalan%20Regency%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1755859508415!5m2!1sen!2sid" width="1070" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="map-controls">
+                    <a href="https://maps.google.com/?q=Desa+Ko'ol+Klampis+Bangkalan" target="_blank" class="map-btn">
+                        <span class="icon icon-google"></span>
+                        Buka Google Maps
+                    </a>
+                    <button class="map-btn" onclick="showVillageDirections()">
+                        <span class="icon icon-route"></span>
+                        Petunjuk Arah
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Village profile functions
+        (function() {
+            'use strict';
+            
+            // Show directions function
+            window.showVillageDirections = function() {
+                var directions = '\n🗺️ PETUNJUK ARAH KE DESA KO\'OL:\n\n' +
+                    '📍 Dari Surabaya:\n' +
+                    '1. Ambil Jalan Tol Surabaya-Gempol\n' +
+                    '2. Keluar di Exit Bangkalan\n' +
+                    '3. Lurus ke arah Klampis (±15 km)\n' +
+                    '4. Ikuti papan petunjuk Desa Ko\'ol\n\n' +
+                    '📍 Dari Bangkalan Kota:\n' +
+                    '1. Ambil jalan menuju Klampis\n' +
+                    '2. Perjalanan ±20 menit\n' +
+                    '3. Belok kanan saat melihat papan Desa Ko\'ol\n\n' +
+                    '🚌 Transportasi Umum:\n' +
+                    '- Naik bus jurusan Bangkalan-Klampis\n' +
+                    '- Turun di terminal Klampis\n' +
+                    '- Lanjut dengan ojek/angkot ke Desa Ko\'ol\n\n' +
+                    '⏰ Estimasi Waktu:\n' +
+                    '- Dari Surabaya: 2-3 jam\n' +
+                    '- Dari Bangkalan: 30 menit\n' +
+                    '- Dari Klampis: 10 menit';
+                
+                alert(directions);
+            };
+
+            // Initialize animations when DOM is ready
+            function initVillageAnimations() {
+                // Check if IntersectionObserver is supported
+                if (!window.IntersectionObserver) {
+                    return; // Skip animations on older browsers
+                }
+
+                var villageObserverOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                var villageObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, villageObserverOptions);
+
+                // Animate timeline items
+                var timelineItems = document.querySelectorAll('#village-profile .timeline-item');
+                for (var i = 0; i < timelineItems.length; i++) {
+                    var item = timelineItems[i];
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    item.style.transition = 'opacity 0.6s ease ' + (i * 0.2) + 's, transform 0.6s ease ' + (i * 0.2) + 's';
+                    villageObserver.observe(item);
+                }
+
+                // Animate org members
+                var orgMembers = document.querySelectorAll('#village-profile .org-member');
+                for (var j = 0; j < orgMembers.length; j++) {
+                    var member = orgMembers[j];
+                    member.style.opacity = '0';
+                    member.style.transform = 'translateY(20px)';
+                    member.style.transition = 'opacity 0.6s ease ' + (j * 0.1) + 's, transform 0.6s ease ' + (j * 0.1) + 's';
+                    villageObserver.observe(member);
+                }
+            }
+
+            // Initialize when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initVillageAnimations);
+            } else {
+                initVillageAnimations();
+            }
+        })();
+    </script>
+</section>
+
+    <!-- Logo Philosophy Section -->
+<section id="logo-philosophy" style="background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%); padding: 64px 0;">
+  <style>
+    .logo-kkn-container {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255,255,255,0.8);
+      border-radius: 32px;
+      box-shadow: 0 8px 32px rgba(74,20,140,0.10);
+      padding: 48px 32px 40px 32px;
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      animation: fadeInUp 1.2s cubic-bezier(.4,2,.6,1);
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+    .logo-kkn-img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 24px rgba(123,31,162,0.15), 0 0 0 8px #fff8dc;
+      border: 4px solid #7b1fa2;
+      background: #fff;
+      transition: transform 0.5s cubic-bezier(.4,2,.6,1), box-shadow 0.5s;
+      will-change: transform;
+      margin: auto;
+      display: block;
+      animation: popIn 1.2s cubic-bezier(.4,2,.6,1);
+    }
+    .logo-kkn-img:hover {
+      transform: scale(1.08) rotate(-3deg);
+      box-shadow: 0 8px 40px 0 rgba(123,31,162,0.25), 0 0 0 12px #ffd70055;
+    }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.7);}
+      100% { opacity: 1; transform: scale(1);}
+    }
+    .logo-kkn-desc {
+      flex: 2 1 340px;
+      animation: fadeInRight 1.4s cubic-bezier(.4,2,.6,1);
+    }
+    @keyframes fadeInRight {
+      0% { opacity: 0; transform: translateX(40px);}
+      100% { opacity: 1; transform: translateX(0);}
+    }
+    .logo-kkn-desc h2 {
+      color: #4a148c;
+      font-size: 2.1rem;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+      font-family: 'Playfair Display', serif;
+      text-shadow: 0 2px 12px #fff8dc99;
+      animation: fadeIn 1.6s;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0;}
+      100% { opacity: 1;}
+    }
+    .logo-kkn-desc ul {
+      font-size: 1.13em;
+      color: #2c3e50;
+      line-height: 1.8;
+      padding-left: 18px;
+      margin: 0;
+      animation: fadeIn 2s;
+    }
+    .logo-kkn-desc ul li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 18px;
+      opacity: 0;
+      animation: listFadeIn 0.7s forwards;
+    }
+    .logo-kkn-desc ul li:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 8px;
+      height: 8px;
+      background: linear-gradient(135deg, #7b1fa2, #ffd700);
+      border-radius: 50%;
+      box-shadow: 0 0 6px #ffd70099;
+    }
+    .logo-kkn-desc ul li:nth-child(1) { animation-delay: 0.2s;}
+    .logo-kkn-desc ul li:nth-child(2) { animation-delay: 0.4s;}
+    .logo-kkn-desc ul li:nth-child(3) { animation-delay: 0.6s;}
+    .logo-kkn-desc ul li:nth-child(4) { animation-delay: 0.8s;}
+    .logo-kkn-desc ul li:nth-child(5) { animation-delay: 1.0s;}
+    .logo-kkn-desc ul li:nth-child(6) { animation-delay: 1.2s;}
+    .logo-kkn-desc ul li:nth-child(7) { animation-delay: 1.4s;}
+    @keyframes listFadeIn {
+      to { opacity: 1; }
+    }
+    @media (max-width: 900px) {
+      .logo-kkn-container { flex-direction: column; padding: 32px 12px;}
+      .logo-kkn-img { margin-bottom: 28px;}
+    }
+  </style>
+  <div class="logo-kkn-container">
+    <div style="flex: 1 1 260px; display: flex; justify-content: center;">
+      <img src="logo kkn terbaru.png" alt="Logo KKN 4 Kolaboratif Desa Ko'ol" class="logo-kkn-img">
+    </div>
+    <div class="logo-kkn-desc">
+      <h2>Filosofi Logo KKN 4 Kolaboratif Desa Ko'ol</h2>
+      <ul>
+        <li><strong>Bentuk Lingkaran:</strong> Melambangkan kolaborasi, persatuan, dan kebersamaan antara mahasiswa KKN dan masyarakat Desa Ko'ol.</li>
+        <li><strong>Warna Ungu & Pink:</strong> Menggambarkan semangat, kreativitas, dan energi positif dalam menjalankan program KKN.</li>
+        <li><strong>Gedung di Tengah:</strong> Simbol kemajuan, pembangunan, dan harapan untuk masa depan Desa Ko'ol yang lebih baik.</li>
+        <li><strong>Padi di Bagian Bawah:</strong> Melambangkan kemakmuran, kesejahteraan, dan hasil utama pertanian masyarakat desa.</li>
+        <li><strong>Pohon & Alam:</strong> Menunjukkan kekayaan alam dan lingkungan Desa Ko'ol yang asri dan hijau.</li>
+        <li><strong>Awan & Langit Cerah:</strong> Melambangkan harapan, cita-cita, dan suasana yang harmonis.</li>
+        <li><strong>Tulisan "KKN 4 Kolaboratif Desa Ko'ol":</strong> Menegaskan identitas kelompok KKN dan lokasi pengabdian.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="section">
+        <div class="container">
+            <center>
+                <div class="programs-image">
+                <img src="logo kkn terbaru.png" width="80px alt ="Program Kerja KKN Desa Ko'ol">
+                <img src="IKIP.png" width="80px alt ="Program Kerja KKN Desa Ko'ol">
+            </center>
+            <div class="section-title">
+                <h2 class="playfair">Program Kerja KKN</h2>
+                <p>Berbagai program inovatif untuk pemberdayaan masyarakat dan pengembangan desa</p>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="mengajar1 (1).jpg" alt="Kegiatan Mengajar dan Pendidikan - KKN Desa Ko'ol">
+                    </div>
+                    <div class="program-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Bidang Pendidikan</h3>
+                    </div>
+                    <div class="program-content">
+                        <h4>Tujuan</h4>
+                        <p>Meningkatkan kualitas pendidikan anak-anak Desa Ko'ol</p>
+                        <h4>Kegiatan</h4>
+                        <ul>
+                            <li>Mengajar PAUD, TK dan SD</li>
+                            <li>Les Gratis di Malam Hari</li>
+                            <li>Bimbingan Belajar</li>
+                            <li>Pelatihan Literasi</li>
+                        </ul>
+                        <h4>Dampak</h4>
+                        <p>Peningkatan prestasi belajar dan minat baca anak-anak</p>
+                    </div>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="umkm.jpg" alt="Kegiatan Mengajar dan Pendidikan - KKN Desa Ko'ol">
+                    </div>
+                    <div class="program-header">
+                        <i class="fas fa-coins"></i>
+                        <h3>Bidang Ekonomi</h3>
+                    </div>
+                    <div class="program-content">
+                        <h4>Tujuan</h4>
+                        <p>Memberdayakan ekonomi masyarakat melalui UMKM dan hasil bumi</p>
+                        <h4>Kegiatan</h4>
+                        <ul>
+                            <li>Pengaktifan UMKM</li>
+                            <li>Pembuatan Produk Hasil Bumi</li>
+                            <li>Pemasaran Produk Desa Ko'ol</li>
+                        </ul>
+                        <h4>Dampak</h4>
+                        <p>Peningkatan pendapatan dan kemandirian ekonomi masyarakat</p>
+                    </div>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="madrasah.jpg" alt="Kegiatan Mengajar dan Pendidikan - KKN Desa Ko'ol">
+                    </div>
+                    <div class="program-header">
+                        <i class="fas fa-mosque"></i>
+                        <h3>Bidang Agama</h3>
+                    </div>
+                    <div class="program-content">
+                        <h4>Tujuan</h4>
+                        <p>Memperkuat nilai-nilai keagamaan dalam masyarakat</p>
+                        <h4>Kegiatan</h4>
+                        <ul>
+                            <li>Mengajar di Madrasah</li>
+                            <li>Membantu Mengajar Mengaji</li>
+                            <li>Pendampingan Kegiatan Keagamaan</li>
+                            <li>Kajian Islami</li>
+                        </ul>
+                        <h4>Dampak</h4>
+                        <p>Peningkatan pemahaman agama dan akhlak mulia</p>
+                    </div>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="sosial.jpg" alt="Kegiatan Mengajar dan Pendidikan - KKN Desa Ko'ol">
+                    </div>
+                    <div class="program-header">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Bidang Sosial</h3>
+                    </div>
+                    <div class="program-content">
+                        <h4>Tujuan</h4>
+                        <p>Memperkuat ikatan sosial dan gotong royong masyarakat</p>
+                        <h4>Kegiatan</h4>
+                        <ul>
+                            <li>Mensukseskan Acara Agustusan</li>
+                            <li>Membersihkan Masjid Setiap Jumat</li>
+                            <li>Mengadakan Kenduri di Desa Ko'ol</li>
+                            <li>Kegiatan Bakti Sosial</li>
+                        </ul>
+                        <h4>Dampak</h4>
+                        <p>Kebersamaan masyarakat semakin kuat dan tradisi terjaga</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UMKM Section -->
+    <section id="umkm" class="section umkm">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="playfair">Produk UMKM Desa Ko'ol</h2>
+                <p>Produk unggulan hasil karya KKN Desa Ko'ol yang berkualitas dan berpotensi</p>
+            </div>
+            <div class="umkm-grid">
+                <div class="umkm-card">
+                    <div class="program-image">
+                        <img src="kerupuk.jpg" alt=">
+                    </div>
+                    <div class></div>
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div class="umkm-content">
+                        <h4>Kerupuk Tiram</h4>
+                        <p>Olahan tiram lokal yang diolah dengan resep turun temurun. Tekstur renyah dan rasa gurih yang khas membuat kerupuk ini menjadi favorit wisatawan.</p>
+                        <p><strong>Keunggulan:</strong> Bahan baku segar dari laut Ko'ol, tanpa pengawet, dan kemasan menarik.</p>
+                        <div class="price">Rp.3.000</div>
+                    </div>
+                </div>
+
+                <div class="umkm-card">
+                    <div class="program-image">
+                        <img src="pempek.jpg" alt=">
+                    </div>
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="umkm-content">
+                        <h4>Pempek Bandeng</h4>
+                        <p>Inovasi pempek menggunakan ikan bandeng segar hasil tangkapan nelayan lokal. Cita rasa yang unik dan berbeda dari pempek pada umumnya.</p>
+                        <p><strong>Keunggulan:</strong> Ikan bandeng segar, bumbu rahasia, dan proses pembuatan higienis.</p>
+                        <div class="price">Rp.8.000</div>
+                    </div>
+                </div>
+
+                <div class="umkm-card">
+                    <div class="program-image">
+                        <img src="stik.webp" alt=">
+                    </div>
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="umkm-content">
+                        <h4>Stick Singkong Crispy</h4>
+                        <p>Camilan sehat berbahan dasar singkong lokal yang diolah menjadi stick crispy. Cocok untuk segala usia dan memiliki nilai gizi tinggi.</p>
+                        <p><strong>Keunggulan:</strong> Bahan alami, rasa original dan pedas, kemasan praktis untuk dibawa.</p>
+                        <div class="price">Rp.5.000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="documentation" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="playfair">Dokumentasi Kegiatan</h2>
+                <p>Momen-momen berharga selama pelaksanaan KKN di Desa Ko'ol</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div>
+                        <img src="posyandu.jpg" width="250px""></i>
+                        <p>Membantu Kegiatan Posyandu</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div>
+                        <img src="senam.jpg" width="250px""></i>
+                        <p>Senam Bersama</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div>
+                        <img src="karnaval.jpg" width="250px""></i>
+                        <p>Karnaval Desa Ko'ol 2025</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div>
+                        <img src="penutupan.jpeg" width="250px""></i>
+                        <p>Acara Penutupan <br> Desa Ko'ol</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div>
+                        <img src="upacara.jpg" width="250px""></i>
+                        <p>Upacara Kemerdekaan <br> 17 Agustus 2025</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div>
+                        <img src="les malam.jpg" width="250px""></i>
+                        <p>Program Les Gratis<br>Setiap Malam Selasa dan Jumat</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="img">👨‍🌾</div>
+                    <h4>Pak Samsul</h4>
+                    <p>"Kegiatan bersih-bersih tiap jumat dan minggu yang digagas mahasiswa KKN membuat kami lebih kompak sebagai warga. Sekarang, anak-anak pun ikut semangat menjaga kebersihan.."</p>
+                </div>
+                <div class="testimonial">
+                    <div class="img">👩‍🍳</div>
+                    <h4>Bu Jumriyah (bu PKK)</h4>
+                    <p>"KKN kali ini terasa lebih dekat dengan masyarakat. Mereka tidak hanya memberi materi, tapi juga mendengarkan aspirasi kami. Kami diajak berdiskusi, bukan hanya diberi tahu"</p>
+                </div>
+                <div class="testimonial">
+                    <div class="img">👨‍💼</div>
+                    <h4>Kepala Desa</h4>
+                    <p>"Mahasiswa KKN membawa perubahan positif bagi desa kami. Program-program mereka sangat bermanfaat untuk kemajuan Ko'ol."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section id="closing" class="section closing">
+        <div class="container">
+            <h2 class="playfair">Terima Kasih Desa Ko'ol</h2>
+            <p>Perjalanan KKN di Desa Ko'ol telah memberikan pengalaman yang tak terlupakan. Kami berharap program-program yang telah dilaksanakan dapat memberikan dampak positif yang berkelanjutan bagi masyarakat Ko'ol.</p>
+            
+            <div class="quote playfair">
+                "Ilmu yang ditanam hari ini, akan tumbuh menjadi perubahan esok hari."
+            </div>
+
+            <p>Semoga kerjasama dan kebersamaan yang telah terjalin dapat terus berlanjut. Desa Ko'ol akan selalu menjadi bagian dari perjalanan hidup kami.</p>
+
+            <div class="video-container">
+    <div class="video-placeholder">
+        <video 
+            src="after movie 4.mp4" 
+            width="100%" 
+            height="100%" 
+            style="width:100%;height:100%;object-fit:cover;border-radius:15px;" 
+            controls 
+            poster="poster.jpg">
+        </video>
+    </div>
+    <p style="margin-top: 1rem;">After Movie KKN Desa Ko'ol 2025</p>
+    <small>Video dokumenter perjalanan KKN selama 23 Hari</small>
+</div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 KKN Desa Ko'ol. Dibuat dengan ❤️ untuk masyarakat Ko'ol</p>
+            <p>STKIP PGRI Bangkalan - Program KKN Tematik 2025</p>
+            <p> Contact Person:</p>
+            <p> 🅾 I Instagram: @kkn_desakool2025;  ♪ Tiktok:@kkn_desakool2025; ✉︎ Email: kkndesakool2025@gmail.com </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+            
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+                backToTop.classList.add('visible');
+            } else {
+                navbar.classList.remove('scrolled');
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Gallery item click effect
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                }, 150);
+            });
+        });
+
+        // Video placeholder click
+        document.querySelector('.video-placeholder').addEventListener('click', function() {
+            const video = this.querySelector('video');
+            if (video.paused) {
+                video.play();
+                this.style.display = 'none'; // Hide placeholder when video plays
+            } else {
+                video.pause();
+                this.style.display = 'block'; // Show placeholder when video pauses
+            }
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+            
+            // Animate hamburger menu
+            const spans = this.querySelectorAll('span');
+            if (navMenu.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const navMenu = document.querySelector('.nav-menu');
+                const mobileMenu = document.querySelector('.mobile-menu');
+                const spans = mobileMenu.querySelectorAll('span');
+                
+                navMenu.classList.remove('active');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            });
+        });
+
+        // Add some interactive effects
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // UMKM card hover effects
+        document.querySelectorAll('.umkm-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.querySelector('.umkm-image').style.transform = 'scale(1.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.querySelector('.umkm-image').style.transform = 'scale(1)';
+            });
+        });
+
+        // Map functions
+        function openGoogleMaps() {
+            const url = 'https://maps.app.goo.gl/5yXepQCiLtjJwyi27';
+            window.open(url, '_blank');
+        }
+
+        function getDirections() {
+            const url = 'https://maps.app.goo.gl/5yXepQCiLtjJwyi27';
+            window.open(url, '_blank');
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9718f7e980650807',t:'MTc1NTU5OTM1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
+</html>
